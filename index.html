@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{background:black; margin:0;}
+		.wrap{height:800px; width:1500px; overflow:hidden; position:relative; left:calc(50% - 750px);}
+
+		.rr{width:10px; height:30px; float:left;}
+
+		.noli{width:10px; height:10px; background:white; position:absolute; animation: tb1 5s infinite ease-in; left:500px; border-radius:100%; z-index:-10;}
+		.noli:hover{opacity:0;}
+		.box{width:1500px; height:150px; background:black; z-index:100; position:absolute; box-shadow: 5px 10px 10px #41436A;}
+		.box5{width:1500px; height:150px; background:black; z-index:102; position:absolute;}
+		.box2{width:1500px; height:150px; background:black; z-index:101; position:absolute; bottom:0px; box-shadow: 5px 10px 10px #41436A inset;}
+		.box3{width:150px; height:800px; background:black; z-index:100; position:absolute; box-shadow: 10px 10px 10px #41436A;}
+		.box6{width:150px; height:800px; background:black; z-index:102; position:absolute;}
+		.box4{width:150px; height:800px; background:black; z-index:100; position:absolute; right:0; box-shadow: 10px 10px 10px #41436A inset;}
+		.baba{width:1500px; background: linear-gradient( to bottom, #41436A, #984063, #F64668, #FE9677 ); position:absolute; height:700px; z-index:-10}
+
+		#hole{opacity:1; width:100%; position:absolute; background:black; height:800px; z-index: 110}
+
+		#start{position:absolute; z-index: 112; width:30px; height:30px; border-radius:100%; background:white; left:calc(50% - 15px); top:calc(50% - 15px); opacity:1;}
+		#start:hover{width:50px; height:50px;}
+
+		@keyframes rr{
+			from{transform:rotate(0deg);}
+			to{transform:rotate(360deg);}
+		}
+
+		@keyframes tb1{
+			from{top:0%;}
+			to{top:100%;}
+		}
+
+		@keyframes cen{
+			to{left:50%;}
+		}
+
+		@keyframes opa{
+			from{opacity:0;}
+			to{opacity:1;}
+		}
+
+		@keyframes opa{
+			from{opacity:1;}
+			to{opacity:0}
+		}
+
+		@keyframes rtol{
+			to{left:1600px;}
+			from{left:0px;}
+		}
+
+		@keyframes ltor{
+			to{left:0px;}
+			from{left:150px;}
+		}
+
+		@keyframes bt2{
+			from{transform:rotate(-90deg);}
+			to{transform:rotate(-90deg);}
+		}
+
+		@keyframes bt3{
+			from{transform:rotate(90deg);}
+			to{transform:rotate(90deg);}
+		}
+
+
+	</style>
+</head>
+<body>
+	<section>
+	<div class="wrap">
+		<div id="hole"></div>
+		<div id="start"></div>
+	<div class="baba"></div>
+	<div class="noli" id="tt"></div>
+	<div class="box" id="bb"></div>
+	<div class="box5"></div>
+	<div class="box2" id="bbb"></div>
+	<div class="box3" id="bbbb"></div>
+	<div class="box6"></div>
+	<div class="box4" id="bbbbb"></div>
+	<img src="city.png" style="position:absolute; width:1000px; bottom:-200px; animation: ltor 19s infinite; animation-delay:1s; left:150px;">
+	<img src="zizi.gif" style="position:absolute; width:50px; z-index:101; bottom:140px; animation: rtol 20s infinite;">
+	
+	<img src="zizi.gif" style="position:absolute; width:200px; z-index:103; bottom:100px; left:-80px;" id="zizi">
+	
+	<audio src="light.mp3" id="aa"></audio>
+	</div>
+	</section>
+
+
+	<div id="monitor"></div>
+
+
+	<script type="text/javascript">
+		start.onclick = function(){
+				aa.play();
+				hole.style.opacity = 0;
+				start.style.opacity = 0;
+		}
+
+		for(var i=0; i<300; i++){
+		var b = tt.cloneNode(true);
+		b.id = i;
+		b.style.width = b.style.height = 5*Math.random() + "px";
+		b.className = "noli";
+		b.style.left =Math.random() * 1400 + "px";
+		b.style.animationDuration = Math.random()*10 + "s";
+		b.style.background = makeColor();
+		document.body.appendChild(b);
+
+		b.onclick = function(){
+			t.style.background = "url(star.png)";
+		}
+		}
+
+//rgb(255,0,255)이런 텍스트를 돌려주는 함수를 만들자.
+function makeColor(){
+	var tt = "white";
+	return tt;
+}
+
+		for(var i=0; i<40; i++){
+			var c = rect.cloneNode(true);
+			c.id = i;
+			c.style.background = makeColor();
+			c.style.width = Math.random()*100 + "px";
+			c.onmouseover=function(r){
+				r.target.style.width = "60px";
+			}
+			document.body.appendChild(c);
+		}
+	</script>
+</body>
+</html>
